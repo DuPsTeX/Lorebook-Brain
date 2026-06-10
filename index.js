@@ -31,9 +31,10 @@ const context = (typeof SillyTavern !== 'undefined') ? SillyTavern.getContext() 
     initialize(context, pluginNs);
     initLorebook(context, context.extensionSettings[pluginNs]);
 
-    const extOrdner = (document.currentScript?.src || '')
-        .split('/scripts/extensions/')[1]
-        ?.split('/')[0] || pluginNs;
+    const modulUrl = import.meta.url || '';
+    const extOrdner = modulUrl.split('/scripts/extensions/')[1]?.split('/')[0]
+        || modulUrl.split('/third-party/')[1]?.split('/')[0]
+        || 'Lorebook-Brain';
 
     initDashboard(context, extOrdner);
     initSettings(context, extOrdner);
