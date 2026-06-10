@@ -1,0 +1,66 @@
+<div class="lb-settings">
+    <h3>🧠 Lorebook Brain - Einstellungen</h3>
+
+    <div class="lb-settings-group">
+        <h4>Extraktion</h4>
+        <label>
+            Extraktions-Intervall (Nachrichten):
+            <input type="number" id="lb-set-extract-interval" min="1" max="20" value="1">
+        </label>
+        <label>
+            Nachrichten pro Extraktion:
+            <input type="number" id="lb-set-extract-count" min="2" max="50" value="8">
+        </label>
+    </div>
+
+    <div class="lb-settings-group">
+        <h4>Lorebook</h4>
+        <label>
+            Max. Einträge:
+            <input type="number" id="lb-set-max-entries" min="10" max="500" value="100">
+        </label>
+        <label>
+            Konsolidierung ab:
+            <input type="number" id="lb-set-consolidation" min="5" max="200" value="50">
+        </label>
+    </div>
+
+    <div class="lb-settings-group">
+        <h4>Pre-Check</h4>
+        <label>
+            Modus:
+            <select id="lb-set-precheck-mode">
+                <option value="immer">Immer</option>
+                <option value="beiVielen">Nur bei vielen Einträgen</option>
+                <option value="nie">Nie</option>
+            </select>
+        </label>
+        <label>
+            Letzte Ereignisse im Check:
+            <input type="number" id="lb-set-precheck-events" min="1" max="10" value="3">
+        </label>
+    </div>
+
+    <div class="lb-settings-group">
+        <h4>Prompt-Injection</h4>
+        <label>
+            Max. Erinnerungen:
+            <input type="number" id="lb-set-max-memories" min="1" max="20" value="5">
+        </label>
+        <label>
+            Token-Budget (%):
+            <input type="number" id="lb-set-token-budget" min="5" max="50" value="20">
+        </label>
+    </div>
+
+    <div class="lb-settings-group">
+        <h4>Szenenfenster</h4>
+        <label>
+            Panel-Position:
+            <select id="lb-set-panel-pos">
+                <option value="rechts">Rechts</option>
+                <option value="links">Links</option>
+            </select>
+        </label>
+    </div>
+</div>
