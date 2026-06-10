@@ -31,8 +31,12 @@ const context = (typeof SillyTavern !== 'undefined') ? SillyTavern.getContext() 
     initialize(context, pluginNs);
     initLorebook(context, context.extensionSettings[pluginNs]);
 
-    initDashboard(context);
-    initSettings(context);
+    const extOrdner = (document.currentScript?.src || '')
+        .split('/scripts/extensions/')[1]
+        ?.split('/')[0] || pluginNs;
+
+    initDashboard(context, extOrdner);
+    initSettings(context, extOrdner);
 
     context.eventSource.on(context.event_types.MESSAGE_RECEIVED, async () => {
         const result = await extrahiereFakten(context).catch(err => {

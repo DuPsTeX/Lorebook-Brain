@@ -373,10 +373,10 @@ export function bindEvents() {
     bindButtons(root);
 }
 
-export async function initDashboard(context) {
+export async function initDashboard(context, extOrdner) {
     _context = context;
 
-    const template = await context.renderExtensionTemplateAsync('lorebook_brain', 'template');
+    const template = await context.renderExtensionTemplateAsync(extOrdner, 'template');
     document.body.insertAdjacentHTML('beforeend', template);
 
     renderAll();

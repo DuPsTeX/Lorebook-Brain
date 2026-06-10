@@ -1,7 +1,7 @@
 import { setEinstellung } from '../core/state.js';
 
-export async function initSettings(context) {
-    const template = await context.renderExtensionTemplateAsync('lorebook_brain', 'settings');
+export async function initSettings(context, extOrdner) {
+    const template = await context.renderExtensionTemplateAsync(extOrdner, 'settings');
     const elSettings = document.querySelector('#extensions_settings');
     if (!elSettings) return;
 
